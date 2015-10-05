@@ -1,0 +1,14 @@
+{
+  "name": "WebColors",
+  "version": "0.0.0",
+  "description": "Web Colors API",
+  "main": "colors.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "me",
+  "license": "MIT",
+  "dependencies": {
+    "request": "~2.64.0"
+  }
+}
