@@ -1,4 +1,4 @@
-	var fs = require('fs');
+var fs = require('fs');
 
 
 /**
@@ -34,8 +34,8 @@ app.get('/users', user.list);
 
 http.createServer(app).listen(app.get('port'), function(req, res){
 
-	var fileContents = fs.readFileSync('data.txt');
-	res.header('Content-Type', 'text/html'); 
-	res.send(fileContents);
   console.log('Express server listening on port ' + app.get('port'));
 });
+
+
+
