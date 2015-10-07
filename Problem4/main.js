@@ -1,21 +1,19 @@
-// var count = 0; 
-// var temp = '';
+var count = 0; 
+var temp = '';
 
-// var addNumbers = function(str) {
-// 	for (var i = 0; i < str.length; i++) {
-// 		if(Number(str[i])) {
-// 			temp = str[i];
-// 			i++;
-// 			while(Number(str[i])) {
-// 				temp += str[i];
-// 			}
+var addNumbers = function(str) {
+	for (var i = 0; i < str.length; i++) {
+			temp = str[i];
+			i++;
+			while(Number(str[i])) {
+				temp += str[i];
+			}
 
-// 			count += Number(temp);
-// 		}
-// 	}
-//	return count
-// }
-// console.log(addNumbers("55Hello5"));
+			count += Number(temp);
+		}
+	return count
+}
+
 
 
 var longestWord = function(str) {
