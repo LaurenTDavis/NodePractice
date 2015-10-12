@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="HalloweenApp" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.1/angular.min.js"></script>
+</head>
+<body ng-controller="pumpkinTroller">
+	<h1>{{greeting}}</h1>
+
+	<form ng-submit="createCostume()">
+		<input ng-model="newCostume.name" placeholder="Costume Name">
+		<input ng-model="newCostume.inapproptriateness" placeholder="Inappropriateness">
+		<input ng-model="newCostume.accessoriesNotIncluded" placeholder="Accessories NOT Included">
+		<input type="submit"> 
+	</form>
+	<div>
+		<ul>
+			<li ng-repeat="costume in costumes">{{costume.name}}</li>
+		</ul>
+	</div>
+
+	<script src="/js/main.js"></script>
+</body>
+</html>

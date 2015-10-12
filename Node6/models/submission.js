@@ -1,11 +1,12 @@
-var Submission = function(name, url, title, description) {
-	this.name = name;
-	this.url = url;
-	this.title = title;
-	this.description = description; 
-}
-
 var submissions = []; 
+
+var Submission = function(submissionData) {
+	this.name = submissionData.name;
+	this.url = submissionData.url;
+	this.title = submissionData.title;
+	this.description = submissionData.description; 
+	submissions.push(this);
+}
 
 
 var getSubmissions = function() {
@@ -42,9 +43,11 @@ var clear = function() {
 
 
 module.exports = {
-	getSubmissions: getSubmissions,
-	getUrl: getUrl, 
-	add: add,
-	remove: remove,
-	clear: clear
+	submissions    : submissions,
+	Submission     : Submission, 
+	getSubmissions : getSubmissions,
+	getUrl         : getUrl, 
+	add            : add,
+	remove         : remove,
+	clear          : clear
 };

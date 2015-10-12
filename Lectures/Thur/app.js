@@ -11,15 +11,14 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/public'));
 
 // Routes \\
-var contestController = require('./controllers/contestController');
-var submissionController = require('./controllers/submissionController');
+var costumeController = require('./controllers/costumeController');
 
 app.get('/', function(req, res){
-  res.sendFile('/index.html', {root : './public'});
+  res.sendFile('/html/home.html', {root : './public'});
 });
 
-
-app.post('/submitvideo', submissionController.entry); 
+app.post('/createcostume', costumeController.createCostume); 
+app.get('/getcostumes', costumeController.getCostumes)
 
 
 // Creating Server and Listening for Connections \\
@@ -27,4 +26,4 @@ var port = 3000
 app.listen(port, function(){
   console.log('Server running on port ' + port);
 
-})
+});
