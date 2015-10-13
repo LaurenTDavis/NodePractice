@@ -14,7 +14,7 @@ var applicantSchema = mongoose.Schema({
 	bio		: String,
 	skills	: Array,
 	years	: Number,
-	motive	: String,
+	why		: String,
 })
 
 var Applicant = mongoose.model('Applicant', applicantSchema)
@@ -32,7 +32,18 @@ app.get('/', function(req, res) {
 
 // displays a list of applicants
 app.get('/applicants', function(req, res){
-	res.sendFile('html/applicants.html', {root : './public'});
+	// Applicant.find( function(error, data) {
+	// 	if(error) {
+	// 		console.log("That is an error");
+	// 	}
+	// 	else {
+	// 		console.log('hello')
+	// 	}
+	// })
+
+
+
+	 res.sendFile('html/applicants.html', {root : './public'});
 });
 
 // creates and applicant
@@ -44,14 +55,14 @@ app.post('/applicant', function(req, res){
 		bio 	: req.body.bio,
 		skills 	: req.body.skills,
 		years 	: req.body.years,
-		motive 	: req.body.motive,
+		why		: req.body.why,
 
 	})
 
-
+	application.save();
 
 	console.log(req.body);
-	res.sendFile('html/success.html', {root : './public'})
+	// res.sendFile('html/success.html', {root : './public'})
 });
 
 
