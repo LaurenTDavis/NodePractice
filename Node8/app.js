@@ -32,19 +32,20 @@ app.get('/', function(req, res) {
 
 // displays a list of applicants
 app.get('/applicants', function(req, res){
-	// Applicant.find( function(error, data) {
-	// 	if(error) {
-	// 		console.log("That is an error");
-	// 	}
-	// 	else {
-	// 		console.log('hello')
-	// 	}
-	// })
-
-
-
-	 res.sendFile('html/applicants.html', {root : './public'});
+	res.sendFile('html/applicants.html', {root : './public'});
 });
+
+
+app.get('/getapplicants', function(req, res) {
+		Applicant.find( function(error, data) {
+		if(error) {
+			console.log("That is an error");
+		}
+		else {
+			res.send(data)
+		}
+	})
+})
 
 // creates and applicant
 app.post('/applicant', function(req, res){

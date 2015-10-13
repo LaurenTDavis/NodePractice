@@ -9,15 +9,10 @@
   <body ng-controller="applicantController">
 	  
     <div class="container">
-    <button ng-click="getApplicants()">View Applicants</button>
       <h1>Applicants</h1>
       <ul id="applications" class="list-unstyled">
         <li ng-repeat="apply in applicants">
           <h1>apply.name</h1><br>
-          <h1>apply.bio</h1><br>
-          <h1>apply.skills</h1><br>
-          <h1>apply.years</h1><br>
-          <h1>apply.bio</h1>
         </li>
       </ul>
     </div>
