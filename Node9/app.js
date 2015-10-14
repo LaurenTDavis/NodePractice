@@ -23,6 +23,20 @@ app.get('/translate', function(req, res) {
 })
 
 
+// app.get('/submit', function(req, res) {
+// 	var endTranslation = 
+// })
+
+app.post('/', function(req, res) {
+	console.log(req.body);
+	googleTranslate.translate(req.body.word, req.body.newLang, function(err, translation) {
+	res.send(translation.translatedText);
+	});
+})
+
+
+
+
 // Creating Server and Listening for Connections \\
 var port = 3000
 app.listen(port, function(){

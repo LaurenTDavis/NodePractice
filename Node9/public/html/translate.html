@@ -8,11 +8,12 @@
 </head>
 <body ng-controller="translateController">
 
-	<form ng-submit="translateSumbit()">
-		<label>Input Language: <input type="radio"></label>
-		<label>Output Language: <input ng-model="translateTo" type="radio"></label>
-		<label>Input Text: <input ng-model="translateInput" type="text"></label>
-		<label>Output Text: </label>
+	<form ng-submit="translateSubmit()">
+		<label>Input Text: <input ng-model="translateData.word" type="text"></label>
+		<label>Input Language: <input type="text" ng-model="translateData.ogLang"></label>
+		<label>Output Language: <input ng-model="translateData.newLang" type="text"></label><br>
+		<label>Output Text: {{translation}}</label>
+		<input type="submit">
 
 	</form>
 

@@ -1,21 +1,20 @@
 angular.module('lingoApp', []);
 
 angular.module('lingoApp').controller('translateController',['$scope', '$http', function($scope, $http) {
-
+	
 
 	$scope.translateSubmit = function() {
-		$http({
-			method 	: 'GET',
-			url		: '/translate',
-			data 	: {
-				strings  : $scope.input,
-				source	 : $scope.translateTo,
-				target 	 : $scope.translateInput,
-				callback : $scope.translateOutput,
-			}
-		})
+console.log('hello world');
 
+		$http({
+			method 	: 'POST',
+			url		: '/',
+			data 	: $scope.translateData
+		}).then(function(returnData){
+			$scope.translation = returnData.data
+		})
 	}
+
 
 }]);
 
