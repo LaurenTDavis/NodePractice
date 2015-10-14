@@ -13,7 +13,7 @@ app.use(express.static(__dirname + '/public'));
 
 // Routes \\
 app.get('/', function(req, res){
-  res.send('Hello')
+  res.sendFile('html/translate.html', {root : './public'});
 });
 
 app.get('/translate', function(req, res) {

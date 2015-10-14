@@ -18,3 +18,9 @@ angular.module('lingoApp').controller('translateController',['$scope', '$http', 
 	}
 
 }]);
+
+angular.module('lingoApp').controller('quizController',['$scope', '$http', function($scope, $http) {
+
+
+
+}]);
