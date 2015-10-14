@@ -23,9 +23,7 @@ app.get('/translate', function(req, res) {
 })
 
 
-// app.get('/submit', function(req, res) {
-// 	var endTranslation = 
-// })
+
 
 app.post('/', function(req, res) {
 	console.log(req.body);
