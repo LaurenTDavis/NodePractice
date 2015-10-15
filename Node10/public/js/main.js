@@ -5,9 +5,18 @@ angular.module('countryApp').controller('countryCtrl', ['$scope', '$http', funct
 
 	$scope.world = [];
 	$scope.load = function() {
-		$http.get('/loadcountries').then(function(returnData) {
+		$http.get('/countries').then(function(returnData) {
 			$scope.world = returnData.data; 
 		})
+	}
+
+	$scope.search = function() {
+		console.log($scope.searchCountry)
+		 $http.post('/search', {
+		 	country : $scope.searchCountry,
+		 }).then(function(returnData) {
+		 	$scope.world = returnData.data;
+		 })
 	}
 
 

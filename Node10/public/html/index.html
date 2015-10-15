@@ -9,8 +9,11 @@
 <body ng-controller="countryCtrl">
 	<h1>{{greeting}}</h1>
 	<button ng-click="load()">Load Countries</button>
+	<input type="text" placeholder="Search by Country" ng-model="searchCountry">
+	<button ng-click="search()">Search</button>
 	<p ng-repeat="country in world">{{country.name}}</p>
 
+	
 	<script src="/js/main.js"></script>
 </body>
 </html>

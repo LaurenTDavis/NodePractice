@@ -22,8 +22,20 @@ app.get('/', function(req, res){
   res.sendFile('/html/index.html', {root : './public'});
 });
 
-app.get('/loadcountries', function(req, res) {
+app.get('/countries', function(req, res) {
 	Countries.find({}, function(error, data) {
+		if (error) {
+			console.log(error);
+		}
+		else {
+			res.send(data);
+		}
+	})
+
+})
+
+app.post('/search', function(req, res) {
+	Countries.find({name : req.body.country}, function(error, data) {
 		if (error) {
 			console.log(error);
 		}
