@@ -72,8 +72,69 @@ var coinDeterminer = function(num) {
     count++;
   } while (num > 0);
   return count;
+}
+
+var secondGreatLow = function(arr) {
+
+  resultArr = arr.sort(function(a, b){
+    return a-b;
+  });
+  
+  if(!(resultArr.length <= 2)){
+    while (resultArr[0] == resultArr[1]){
+      resultArr = resultArr.slice(1);
+      //return resultArr;
+    }
+
+    while (resultArr[resultArr.length-1] == resultArr[resultArr.length-2]){
+      resultArr = resultArr.pop();
+      //return resultArr;
+    }
+  }
+
+
+  if (resultArr.length <= 2){
+    return resultArr[1] + " " + resultArr[0];
+  } 
+  else {
+      return resultArr[1] + " " + resultArr[resultArr.length-2];
 
   }
+
+}
+
+var timeConvert = function(num) {
+  var hours = (num / 60);
+  var rHours = Math.floor(hours);
+  var minutes = (hours - rHours) * 60;
+  var rMinutes = Math.round(minutes);
+  return rHours + ":" + rMinutes;
+}
+
+var bracketMatcher = function(str) {
+  bracket1Arr = [];
+  bracket2Arr = [];
+  
+  for (i=0; i<str.length;i++){
+    if(str.charAt(i) == "("){
+      bracket1Arr.push(str.charAt(1));
+    } 
+    else if (str.charAt(i) == ")"){
+      bracket2Arr.push(str.charAt(1));
+    }
+    if(bracket2Arr.length > bracket1Arr.length){
+      return false;
+    }
+  }
+
+  if (bracket1Arr.length == bracket2Arr.length){
+    return true;
+  } 
+  else {
+    return false;
+  }
+
+}
 
 
 
